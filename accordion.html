@@ -1,0 +1,95 @@
+<html>
+    <header>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            .accordion{
+                background-color:#eee;
+                color:#444;
+                cursor:pointer;
+                padding:18px;
+                width:100%;
+                text-align:left;
+                border:none;
+                outline:none;
+                
+                
+            }
+            .active,.accordion:hover{
+                background:#ccc;
+            }
+            .panel{
+                padding: 0 18px;
+                display:none;
+              
+                
+            }
+            .accordion::after{
+                content:'\02795';
+                float:right;
+                font-size:13px;
+                color:#777;
+            
+                
+                
+            }
+            .active::after{
+                content:'\2796';
+                float:right;
+                font-size:13px;
+                color:#777;
+               
+            }
+        </style>
+    </header>
+    <body>
+        <button class='accordion' >Section 1</button>
+        <div class='panel'>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+        <button class='accordion' >Section 2</button>
+        <div class='panel'>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+        <button class='accordion' >Section 3</button>
+        <div class='panel'>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+
+        <script>
+           /* var acc = document.getElementsByClassName("accordion");
+            var i;
+
+            for (i = 0; i < acc.length; i++) {
+                acc[i].addEventListener("click", function() {
+                    //这个方法的作用就是，当素上没有这个class时，它就新增这个class；如果元素已经有了这个class，它就是删除它。就是反转操作。
+                    this.classList.toggle("active");
+                    var panel = this.nextElementSibling;
+                    
+                    if (panel.style.display === "block") {
+                        panel.style.display = "none";
+                    } else {
+                        panel.style.display = "block";
+                    }
+                });
+            }*/
+            let acc = document.getElementsByClassName("accordion");
+            for (let i = 0; i < acc.length; i++){
+                acc[i].onclick=function displayPanel(){
+                    //这个方法的作用就是，当素上没有这个class时，它就新增这个class；如果元素已经有了这个class，它就是删除它。就是反转操作。
+                    this.classList.toggle("active");
+                     let panel = this.nextElementSibling;
+                    
+                    if (panel.style.display === "block") {
+                        panel.style.display = "none";
+                    } else {
+                        panel.style.display = "block";
+                    }
+                }
+                    
+            }
+        </script>
+       
+        
+    </body>
+</html>

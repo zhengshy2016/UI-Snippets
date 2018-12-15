@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            .tab{
+                border:1px solid #ccc;
+                background-color:#f1f1f1;
+                /*?*/
+                overflow: hidden;
+            }
+            .tab button{
+                float:left;
+                background-color:inherit;
+                border:none;
+                cursor:pointer;
+                padding:14px 16px;
+            }
+            .tab button:hover{
+                background-color:#ddd;
+            }
+            /*?*/
+            .tab button.active{
+                background-color:#ccc;
+            }
+            .tabcontent{
+                display:none;
+                padding:6px 12px;
+                border:1px solid #ccc;
+                
+            }
+        </style>
+    </head>
+    <body>
+        <div class='tab'>
+            <button class="tablinks"  id="defaultOpen">London</button>
+            <button class="tablinks" >Paris</button>
+            <button class="tablinks" >Tokyo</button>
+        </div>
+        <div  class="tabcontent">
+            <h3>London</h3>
+            <p>London is the capital city of England.</p>
+        </div>
+        <div class='tabcontent'>
+            <h3>Paris</h3>
+            <p>Paris is the capital of France</p>
+        </div>
+        <div class='tabcontent'>
+            <h3>Tokyo</h3>
+            <p>Tokyo is the capital of Japan</p>
+            
+        </div>
+        <script>
+            
+            let link=document.getElementsByClassName("tablinks");
+            let content=document.getElementsByClassName("tabcontent");
+            for(let i=0;i<link.length;i++){
+               link[i].onclick=function(){
+                    for(let j=0;j<content.length;j++){
+                        content[j].style.display="none";
+                       
+                        link[j].classList.remove("active");
+                    }
+                    content[i].style.display="block";
+                    this.classList.add("active");
+                }
+            }
+       document.getElementById('defaultOpen').click();
+        </script>
+    </body>
+</html>

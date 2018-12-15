@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            #navbar{
+                background-color:#333;
+                position:fixed;
+                top:-50px;
+                width:100%;
+                transition: top 0.3s;
+                
+               
+            }
+            #navbar a{
+                float:left;
+                color:#f2f2f2;
+                text-align: center;
+                text-decoration: none;
+                padding: 15px;
+                font-size: 17px;
+            }
+            .artile{
+                padding:20px;
+                font-size: 60px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="navbar">
+            <a href="#">Home</a>
+            <a href="#">News</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="artile">
+            <p><b>This example demonstrates how to slide down a navbar when the user starts to scroll the page.</b></p>
+            <p>Scroll down this frame to see the effect!</p>
+            <p>Scroll to the top to hide the navbar.</p>
+            <p>Lorem ipsum dolor dummy text sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <script>
+            window.onscroll=function(){
+                if(document.body.scrollTop>20||document.documentElement.scrollTop>20){
+                   document.getElementById("navbar").style.top="0";
+                    //document.getElementById("navbar").style.display="block";
+                    
+                }else{
+                    document.getElementById("navbar").style.top="-50px";
+                     //document.getElementById("navbar").style.display="none";
+                }
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            .header{
+                background-color:#f1f1f1;
+                padding:30px;
+                text-align: center;
+            }
+            #navbar{
+                background-color:#333;
+                /*?*/
+                overflow:hidden;
+              
+            }
+            #navbar a{
+                float:left;
+                color:#f2f2f2;
+                text-align: center;
+                text-decoration: none;
+                padding: 15px;
+                font-size: 17px;
+            }
+            .content{
+                padding:20px;
+                font-size: 60px;
+            }
+            .sticky{
+                position:fixed;
+                top:0;
+                width:100%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <h2>Scroll Down</h2>
+            <p>Scroll down to see the sticky effect.</p>
+        </div>
+        <div id="navbar">
+            <a href="#">Home</a>
+            <a href="#">News</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="content">
+            
+            <p><b>This example demonstrates how to slide down a navbar when the user starts to scroll the page.</b></p>
+            <p>Scroll down this frame to see the effect!</p>
+            <p>Scroll to the top to hide the navbar.</p>
+            <p>Lorem ipsum dolor dummy text sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <script>
+            var sticky=document.getElementById("navbar").offsetTop;
+            window.onscroll=function(){
+                if(window.pageYOffset>=sticky){
+                    document.getElementById("navbar").classList.add("sticky");
+                }else{
+                    document.getElementById("navbar").classList.remove("sticky");
+                }
+            }
+           
+        </script>
+    </body>
+</html>
